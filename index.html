@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vapi Assistant Demo</title>
+  </head>
+
+  <body>
+    <h1>Vapi Assistant Demo</h1>
+
+    <div style="border: 1px solid black; padding: 20px; width: 300px;">
+      <h2>Assistant 1</h2>
+
+      <button id="start">Start Assistant</button>
+      <button id="stop">Stop Assistant</button>
+    </div>
+
+    <script type="module">
+      // Vapi Web SDK
+      import Vapi from "https://esm.sh/@vapi-ai/web";
+
+      // vapi public key can be exposed
+      const publicKey = "sample_pblic_key";
+
+      // Assistant 1 ID can be exposed
+      const assistantId = "sample_assistant_id";
+
+      const vapi = new Vapi(publicKey);
+
+      document.getElementById("start").onclick = () => {
+        vapi.start(assistantId);
+      };
+
+      document.getElementById("stop").onclick = () => {
+        vapi.stop();
+      };
+    </script>
+  </body>
+</html>
